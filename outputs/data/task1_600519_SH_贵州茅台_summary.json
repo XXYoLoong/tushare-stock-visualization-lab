@@ -1,0 +1,12 @@
+{
+  "stock_name": "贵州茅台",
+  "stock_code": "600519.SH",
+  "total_rows": 243,
+  "duplicate_rows": 0,
+  "missing_cells": 0,
+  "closing_price_mean": 1476.0761728395062,
+  "closing_price_std": 58.98328697100466,
+  "volume_mean": 32873.502304526744,
+  "highest_close": 1637.86,
+  "lowest_close": 1377.18
+}
