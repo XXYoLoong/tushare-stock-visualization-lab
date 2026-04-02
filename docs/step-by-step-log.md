@@ -172,3 +172,22 @@ Tushare 股票数据可视化分析实验
 - 已再次提交过程文档修正：`Note final push retry`
 - 已重试 `git push` 并成功同步到远程。
 - 截至当前，远程仓库 `main` 分支已包含全部最终文件和完整过程日志。
+
+### 2026-04-01 轮次 6
+- 用户提出新要求：将“每次操作同步到过程文档”的做法抽象为可复用的全局 SKILL，并希望后续任何项目都尽量执行。
+- 采用技能创建流程 `skill-creator` 处理该需求。
+- 已在全局技能目录 `F:\.codex\skills` 下创建新技能：`process-log-sync`
+- 已生成并完善以下文件：
+  - `F:\.codex\skills\process-log-sync\SKILL.md`
+  - `F:\.codex\skills\process-log-sync\references\log-template.md`
+  - `F:\.codex\skills\process-log-sync\agents\openai.yaml`
+- 技能内容已覆盖：
+  - 优先复用现有过程文档，否则创建 `docs/step-by-step-log.md`
+  - 在项目开始、每次实质性进展更新后、最终交付前同步更新过程文档
+  - 记录高信号事实、避免噪音和敏感信息泄露
+  - 提供通用日志模板
+- 处理过程中的修正：
+  - 初版技能文件包含非 ASCII 字符，导致 `quick_validate.py` 在 Windows 默认 `GBK` 读取时失败
+  - 已将技能文件调整为纯 ASCII 内容并重新校验通过
+- 已显式设置 `allow_implicit_invocation: true`，尽量让该技能在未来项目中可被默认隐式触发。
+- 下一步：向用户说明该技能的实际生效边界，并给出使用建议。
